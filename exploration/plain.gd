@@ -1,11 +1,9 @@
 extends Node3D
 @onready var singleton=Singleton
+@onready var singleton_monsters=SingletonMonsters
+
 @onready var player_dice = $VBoxContainer/player_dice
 
-func _ready():
-#	init_world_from_player_level()
-	singleton.monster.hide()
-	
 enum TravelState {
 IDLE,
 ROLLING,
@@ -34,8 +32,8 @@ func _process(delta):
 			moved_full_distance = false
 
 		TravelState.ROLLING:
-
-			singleton.monster.hide()
+			singleton_monsters.monster_instance.visible = false
+#			singleton.monster.hide()
 			travel()
 			travel_state = TravelState.ADVANCING
 
@@ -45,7 +43,9 @@ func _process(delta):
 				travel_state = TravelState.COMBAT
 
 		TravelState.COMBAT:
-			singleton.monster.show()		
+			singleton_monsters.monster_textures(singleton_monsters.forest_0)
+			singleton_monsters.monster_instance.visible = true
+#			singleton.monster.show()		
 			roll_events(delta)
 			travel_state = TravelState.IDLE
 
@@ -79,52 +79,6 @@ func _on_return_pressed():
 	self.queue_free()
 
 
-'''
-# POP UP MONSTER
-
-@onready var start_position_monster = monster.transform.origin
-var speed_m = 1.0
-var monster_up = false
-func move_monster_up(_unit, _delta):
-	if monster:
-		var end_position = start_position_monster + Vector3(0, _unit, 0) * speed_m
-		monster.transform.origin += Vector3(0, speed_m, 0) * _delta
-		if monster.transform.origin.distance_to(end_position) < speed_m * _delta:
-			monster.transform.origin = end_position
-			monster_up = false
-			
-			await get_tree().create_timer(3).timeout
-			monster.transform.origin = start_position_monster
-'''
-
-
-
-
-
-
-#@onready var monster = $assets/monster	
-func change_monster_texture(new_texture_path):
-	var new_texture = load(new_texture_path)
-	print ("monster path ", singleton.monster.get_path()) # is /root/plain/assets/monster
-	var mesh_instance = singleton.monster.get_node("monster2")
-	print ("monster  mesh", mesh_instance) # is monster2:<MeshInstance3D#36339451158>
-	if mesh_instance is MeshInstance3D:
-		var mesh = mesh_instance.mesh
-		var material = mesh.surface_get_material(0)
-		if material is StandardMaterial3D:
-			material.albedo_texture = new_texture
-			material.blend_mode = StandardMaterial3D.BLEND_MODE_MIX
-			material.transparency = 0.5
-			material.depth_draw_mode = StandardMaterial3D.DEPTH_DRAW_ALWAYS
-			material.albedo_color = Color(1,1,1,1)
-			material.alpha_scissor_threshold = 0.5
-			material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-#			material.flags_unshaded = StandardMaterial3D.FLAG_ALBEDO_FROM_VERTEX_COLOR
-			material.transparency = StandardMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
-#			material.transparency = StandardMaterial3D.TRANSPARENCY_ALPHA_DEPTH_PRE_PASS
-
-
-
 # PICK A WORLD FROM PLAYER LEVEL
 var box:Node
 var start_position:Vector3
@@ -146,23 +100,14 @@ func pick_world_from_player_level():
 func roll_events(_delta):
 	$VBoxContainer.hide()
 	if singleton.player_stats.level < 1:
-		if singleton.forest_monsters_0_random !=null:
-			change_monster_texture(singleton.forest_monsters_0_random)
-		else:
-			print("bug start in plain.gd fuck 1/2 singleton.forest_monsters_0_random is null")
-		
+		singleton_monsters.monster_textures(singleton_monsters.forest_0)
+
 	if singleton.player_stats.level >= 1 and singleton.player_stats.level <=2 :
-		if singleton.forest_monsters_0_random !=null:
-			change_monster_texture(singleton.forest_monsters_1_random)
-		else:
-			print("bug start in plain.gd fuck 1/2 singleton.forest_monsters_1_random is null")
-			
+		singleton_monsters.monster_textures(singleton_monsters.forest_0)
+
 	if singleton.player_stats.level >= 2:
-		if singleton.forest_monsters_0_random !=null:
-			change_monster_texture(singleton.forest_monsters_2_random)
-		else:
-			print("bug start in plain.gd fuck 1/2 singleton.forest_monsters_2_random is null")
-	
+		singleton_monsters.monster_textures(singleton_monsters.forest_0)
+
 	if travel_distance == 1:
 		print("Trap loose one object, armor, shield, helmet")
 		singleton.switch_to_combat_level_1_scene()
@@ -177,7 +122,7 @@ func roll_events(_delta):
 		
 	if travel_distance == 4:
 		print("- Sage in the woods offers advice. Pay to learn a spell or skill, or keep walking?")
-		change_monster_texture("res://assets/characters/sage.png")
+
 		singleton.switch_to_experience_scene()
 
 	if travel_distance == 5:

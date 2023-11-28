@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var singleton = Singleton
-
+@onready var singleton_monsters = SingletonMonsters
 @onready var dice_result = $attack_result/dice_result
 @onready var monster_stats_damage = $stats_monster/damage
 
@@ -40,20 +40,15 @@ func _on_attack_pressed():
 	$combat/escape.hide()	
 	
 	if singleton.player_stats.level < 1:
-		if singleton.forest_monsters_0_random != null:
-			fight_monster(singleton.forest_monsters_0_random, MONSTER_HIT_FORCE_0, 1)
-		else:
-			print("bug 2/2 in combat_level_1/fight.gd fuck singleton.forest_monsters_0_random is null")
+		fight_monster("res://assets/monsters/forest_monsters_0/0001.png", MONSTER_HIT_FORCE_0, 1)
+
 	if singleton.player_stats.level >= 1 and singleton.player_stats.level <=2:
-		if singleton.forest_monsters_1_random != null:
-			fight_monster(singleton.forest_monsters_1_random, MONSTER_HIT_FORCE_1, 2)
-		else:
-			print("bug 2/2 in combat_level_1/fight.gd fuck singleton.forest_monsters_1_random is null")
+		fight_monster("res://assets/monsters/forest_monsters_0/0002.png", MONSTER_HIT_FORCE_1, 2)
+
 	if singleton.player_stats.level >= 2:
-		if singleton.forest_monsters_2_random != null:
-			fight_monster(singleton.forest_monsters_2_random, MONSTER_HIT_FORCE_2, 3)
-		else:
-			print("bug 2/2 in combat_level_1/fight.gd fuck singleton.forest_monsters_2_random is null")
+		fight_monster("res://assets/monsters/forest_monsters_0/0003.png", MONSTER_HIT_FORCE_2, 3)
+
+
 		
 
 const MONSTER_HIT_FORCE_0 = 4
@@ -80,7 +75,7 @@ func roll_dice_and_determine_winner(damage_caused_by_monster: int):
 	if player_attack_value > monster_attack_value:
 		is_player_winner = true
 		dice_result.text = str("VICTORY !")
-		singleton.monster.hide()
+#		singleton.monster.hide()
 
 	elif monster_attack_value > player_attack_value:
 		is_player_winner = false

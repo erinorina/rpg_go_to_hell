@@ -139,7 +139,7 @@ func show_exploration_plain_scene():
 	for child in exploration_plain_scene_instance.get_children():
 		child.visible = true
 
-
+'''
 # FOREST MONSTERS RANDOM PICK PNG IN FOLDER
 @onready var forest_monsters_0 = []
 @onready var forest_monsters_0_random:String
@@ -199,3 +199,4 @@ func append_directory_png_textures(_directory_of_png:String, _array:Array):
 			file_name = directory.get_next()
 		directory.list_dir_end()
 
+'''

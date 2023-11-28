@@ -1,8 +1,8 @@
-/home/sd/Godot-4.1/Tests/rpg/export/linux
-/home/sd/Godot-4.1/Tests/rpg/export
+/home/sd/Godot-4.1/Tests/rpg_refactor/exports/html5
+/home/sd/Godot-4.1/Tests/rpg_refactor/exports/linux
+res://
 res://assets/exploration
 res://assets/exploration/forest
 res://storyboard
 res://storyboard/monsters_1
 res://assets/monsters
-res://
