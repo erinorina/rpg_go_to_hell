@@ -1,0 +1,14 @@
+
+Preparing The output files from invoke ai for blender compositing transparent background for the monsters
+
+- seperate the depth images from the latents images by sorting the images by size,
+and put them in two distinct folders, bw for the depth and diffuse for the latent.
+
+- use xnview to rename them 001, 002, etc, dont forget to order them by modification date before
+In Input Tab:
+tool -> batch convert -> Add folder -> Modified Date
+
+In Output Tab
+Filename ###
+check Keep original date/time attributes
+then click Convert

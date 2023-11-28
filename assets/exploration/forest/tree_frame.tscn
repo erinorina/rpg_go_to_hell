@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1jla3sybrofb"]
+
+[ext_resource type="PackedScene" uid="uid://bleivlm5coqfm" path="res://assets/exploration/forest/tree_frame.glb" id="1_0vfab"]
+[ext_resource type="ArrayMesh" uid="uid://egrdh20kx2v3" path="res://assets/exploration/forest/tree_frame.tres" id="3_5yr6w"]
+
+[node name="tree_frame" instance=ExtResource("1_0vfab")]
+
+[node name="tree_frame_mesh" parent="." index="0"]
+mesh = ExtResource("3_5yr6w")

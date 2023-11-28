@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnmiwgqqoeop6"]
+
+[ext_resource type="Script" path="res://combat/loss.gd" id="1_sava2"]
+
+[node name="combat_loss" type="Node3D"]
+script = ExtResource("1_sava2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

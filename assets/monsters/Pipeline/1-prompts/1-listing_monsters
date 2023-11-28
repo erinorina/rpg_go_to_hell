@@ -1,0 +1,101 @@
+# using poe.com claude ai , and phind.com to generate the list of monsters and from
+additional creatures that could be added to the list in order of least to most dangerous
+potential environments for the creatures
+
+
+
+
+(A {birds| snakes| scorpions| deer| boars} attacking from front in a forest), medieval era, painting by Ed Blinkey, Atey Ghailan, Studio Ghibli, by Jeremy Mann, Greg Manchess, Antonio Moro, trending on ArtStation, trending on CGSociety, Intricate, High Detail, Sharp focus, dramatic, painting art by midjourney and greg rutkowski,  countryside, action pose
+
+
+Forests, woods, orchards - birds, snakes, scorpions, deer, boars, elves, satyrs, centaurs, sprites, pixies, faeries
+Grasslands, plains, fields - deer, boars, centaurs, jackalopes
+Coastlines, seashores, oceans, seas - merfolk, kappas, nagas, krakens, dragons
+Rivers, lakes, ponds, streams - kappas, nagas, kelpie, merfolk
+Swamps, bogs, marshes - nagas, kappas, merfolk, chupacabra
+Arctic, tundra - yetis, wendigos
+Deserts, badlands - djinn, manticores, chupacabra
+Jungles, rainforests - nagas, cockatrices, basilisks, harpies
+Underworld, undersea - demons, hydras, krakens, dragons, cyclopes
+Sky - pegasus, thunderbirds, roc
+Urban, suburban, rural, farmland - banshees, gargoyles, golems, gremlins, la llorona
+
+
+
+
+
+forest non-mythical creatures
+Bears| Foxes | Rabbits | Raccoons | Squirrels | Coyotes | Bobcats | Wild boar | Moose
+
+
+ forests:
+
+Werewolves - Known to live/transform in forests.
+
+Trolls - Traditionally depicted as dwelling under bridges or in forests.
+
+Dryads - Tree nymphs or spirits in Greek mythology associated with wooded areas.
+
+Wood elves - More woodland-dwelling variations of standard elves.
+
+Bears - While usually not "mythical," bears are common forest inhabitants.
+
+Wildcats (lynx, bobcat) - Smaller predatory cats found in some forest biomes.
+
+Foxes - Although not magical, red foxes naturally live in certain forests.
+
+
+6 cute and inoffensive non-mythical forest creatures
+
+(
+A small and cute {
+Rabbit|
+Raccoon|
+Squirrel|
+Chipmunk|
+Foxe
+}
+escaping from back in a forest
+),
+medieval era, painting by Ed Blinkey, Atey Ghailan, Studio Ghibli, by Jeremy Mann, Greg Manchess, Antonio Moro, trending on ArtStation, trending on CGSociety, Intricate, High Detail, Sharp focus, dramatic, painting art by midjourney and greg rutkowski, action pose
+
+
+thank for your responsse it's been one week i try hard to do it i was certain a such functionality was available, i hope for future update, it's realy dedious to put a script in place as the depth image doesn't follow the name of the generated one , i have to sort the output images by modification date, split the depth and the generated one in two separate folder, rename them and then composite them, and sometime the batch get screwed up in order
+
+# prompt invoke ai for forest monster level 0
+(
+One cute {
+Rabbit|
+Raccoon|
+Squirrel|
+Chipmunk|
+Fox
+}
+attacking on a ground
+),
+medieval era, painting by Ed Blinkey, Atey Ghailan, Studio Ghibli, by Jeremy Mann, Greg Manchess, Antonio Moro, trending on ArtStation, trending on CGSociety, Intricate, High Detail, Sharp focus, dramatic, painting art by midjourney and greg rutkowski, action pose under soft light in cartoon Stylized Game texture
+
+
+(
+an agressive
+{
+deer defending young |
+boars charging |
+porcupine Raising quills and tails |
+beaver Powerful biting with large front teeth |
+Salamander secreting skin irritants |
+Skunk raising tail and stamping ground discharging spray
+}
+attacking on a ground
+),
+medieval era, painting by Ed Blinkey, Atey Ghailan, Studio Ghibli, by Jeremy Mann, Greg Manchess, Antonio Moro, trending on ArtStation, trending on CGSociety, Intricate, High Detail, Sharp focus, dramatic, painting art by midjourney and greg rutkowski, action pose under soft light in cartoon Stylized Game texture
+
+
+
+
+Black bear
+Cougar
+Bobcat
+Coyote
+snake
+Wolves

@@ -1,0 +1,11 @@
+SpotLight3D
+OmniLight3D
+VBoxContainer
+Control
+Label
+HBoxContainer
+Node3D
+Camera3D
+CSGBox3D
+TextureRect
+Button

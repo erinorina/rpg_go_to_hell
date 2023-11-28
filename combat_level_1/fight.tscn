@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnphb2xqejepi"]
+
+[ext_resource type="Script" path="res://combat_level_1/fight.gd" id="1_q6ojq"]
+
+[node name="combat" type="Node3D"]
+script = ExtResource("1_q6ojq")
+
+[node name="combat" type="VBoxContainer" parent="."]
+offset_right = 128.0
+offset_bottom = 186.0
+
+[node name="combat" type="Label" parent="combat"]
+layout_mode = 2
+text = "COMBAT"
+
+[node name="escape" type="Button" parent="combat"]
+layout_mode = 2
+text = "Escape"
+
+[node name="attack" type="Button" parent="combat"]
+layout_mode = 2
+text = "Attack"
+
+[node name="stats_monster" type="VBoxContainer" parent="."]
+layout_direction = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -28.0
+offset_right = 152.0
+offset_bottom = 28.0
+grow_vertical = 2
+
+[node name="MONSTER STATS" type="Label" parent="stats_monster"]
+layout_mode = 2
+text = "MONSTER STATS"
+
+[node name="damage" type="Label" parent="stats_monster"]
+layout_mode = 2
+text = "damage"
+
+[node name="hit_range" type="Label" parent="stats_monster"]
+layout_mode = 2
+text = "hit_range"
+
+[node name="stats_player" type="VBoxContainer" parent="."]
+layout_direction = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -28.0
+offset_right = 152.0
+offset_bottom = 28.0
+grow_vertical = 2
+
+[node name="PLAYER STATS" type="Label" parent="stats_player"]
+layout_mode = 2
+text = "PLAYER STATS"
+
+[node name="hit_range" type="Label" parent="stats_player"]
+layout_mode = 2
+text = "hit_range"
+
+[node name="attack_result" type="VBoxContainer" parent="."]
+layout_direction = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_right = 30.0
+offset_bottom = 116.0
+grow_horizontal = 2
+
+[node name="ATTACK" type="Label" parent="attack_result"]
+layout_mode = 2
+text = "ATTACK"
+
+[node name="player_dice" type="Label" parent="attack_result"]
+layout_mode = 2
+text = " "
+
+[node name="monster_dice" type="Label" parent="attack_result"]
+layout_mode = 2
+text = " "
+
+[node name="dice_result" type="Label" parent="attack_result"]
+layout_mode = 2
+text = " "
+
+[connection signal="pressed" from="combat/escape" to="." method="_on_escape_pressed"]
+[connection signal="pressed" from="combat/attack" to="." method="_on_attack_pressed"]

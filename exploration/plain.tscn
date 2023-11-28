@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://bh58hwipm7mc4"]
+
+[ext_resource type="Script" path="res://exploration/plain.gd" id="1_5ugfv"]
+[ext_resource type="PackedScene" uid="uid://bvdey8m542p4e" path="res://assets/exploration/hell.glb" id="3_napjv"]
+[ext_resource type="PackedScene" uid="uid://dtu1mypghfh2f" path="res://assets/monsters/monster.glb" id="3_t1cro"]
+[ext_resource type="PackedScene" uid="uid://d1jla3sybrofb" path="res://assets/exploration/forest/tree_frame.tscn" id="5_413wf"]
+[ext_resource type="PackedScene" uid="uid://dfcnu1fnk6t68" path="res://assets/exploration/forest/path.tscn" id="6_r36ft"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5axmh"]
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_qame8"]
+sky_material = SubResource("ProceduralSkyMaterial_5axmh")
+
+[sub_resource type="Environment" id="Environment_eihsd"]
+background_mode = 2
+sky = SubResource("Sky_qame8")
+sky_custom_fov = 78.9
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_white = 4.5
+
+[node name="plain" type="Node3D"]
+script = ExtResource("1_5ugfv")
+
+[node name="_TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 128.0
+offset_bottom = 126.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="exploration" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exploration"
+
+[node name="return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="traveling" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Travel"
+
+[node name="player_dice" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = " "
+
+[node name="assets" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, -6)
+
+[node name="Camera3D" type="Camera3D" parent="assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63, 0)
+fov = 90.0
+size = 0.01
+near = 0.01
+far = 32.0
+
+[node name="hell" parent="assets" instance=ExtResource("3_napjv")]
+visible = false
+
+[node name="__monster" parent="assets" instance=ExtResource("3_t1cro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+visible = false
+
+[node name="z" type="WorldEnvironment" parent="assets"]
+environment = SubResource("Environment_eihsd")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="assets"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, -1)
+visible = false
+light_energy = 2.0
+light_specular = 0.0
+light_bake_mode = 0
+spot_range = 16.0
+spot_attenuation = 1.18921
+spot_angle = 57.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+visible = false
+light_bake_mode = 0
+omni_range = 5.541
+
+[node name="forest" parent="." instance=ExtResource("6_r36ft")]
+
+[node name="tree_frame2" parent="forest" instance=ExtResource("5_413wf")]
+transform = Transform3D(-0.266, 0, 0, 0, 0.335, -3.93403e-08, 0, 2.92866e-08, 0.45, 0.11, 1.73, -2.97)
+
+[node name="tree_frame" parent="forest" instance=ExtResource("5_413wf")]
+transform = Transform3D(1.305, 0, 0, 0, 0.825, 0, 0, 0, 1.305, 0, 3.965, -9.795)
+
+[connection signal="pressed" from="VBoxContainer/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="VBoxContainer/traveling" to="." method="_on_traveling_pressed"]

@@ -1,0 +1,7 @@
+res://combat_level_1/fight.tscn
+res://assets/exploration/forest/tree_frame.tres
+res://exploration/plain.tscn
+res://assets/exploration/forest/path.tscn
+res://singleton.gd
+res://combat_level_1/fight.gd
+res://exploration/plain.gd

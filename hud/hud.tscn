@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://nbl0e63dj5wn"]
+
+[ext_resource type="Script" path="res://hud/hud.gd" id="1_osgfn"]
+
+[node name="hud" type="Node3D"]
+script = ExtResource("1_osgfn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="life" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="xp" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="level" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="attack" type="Label" parent="HBoxContainer"]
+layout_mode = 2

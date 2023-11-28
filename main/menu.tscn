@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqmw3scknhiqx"]
+
+[ext_resource type="Script" path="res://main/menu.gd" id="1_40pgm"]
+
+[node name="idle" type="Node3D"]
+script = ExtResource("1_40pgm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -16.0
+offset_right = 4.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="exploration" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exploration"
+
+[node name="experience" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Experience"
+
+[node name="combat" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Combat"
+
+[connection signal="pressed" from="VBoxContainer/exploration" to="." method="_on_exploration_pressed"]
+[connection signal="pressed" from="VBoxContainer/experience" to="." method="_on_experience_pressed"]
+[connection signal="pressed" from="VBoxContainer/combat" to="." method="_on_combat_pressed"]
