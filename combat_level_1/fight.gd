@@ -85,7 +85,10 @@ func roll_dice_and_determine_winner(damage_caused_by_monster: int):
 	else:
 		dice_result.text = str("DRAW !")
 	
-	await get_tree().create_timer(3).timeout
+	singleton_monsters.monster_shader_fade_over = false
+	singleton_monsters.monster_shader_fade_in_out = true
+	
+	await get_tree().create_timer(2).timeout
 	singleton.switch_to_exploration_plain()
 	self.queue_free()
 	

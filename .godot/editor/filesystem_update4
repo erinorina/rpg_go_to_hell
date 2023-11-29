@@ -4,5 +4,4 @@ res://exploration/plain.tscn
 res://assets/exploration/forest/path.tscn
 res://singleton_monsters.gd
 res://exploration/plain.gd
-res://singleton.gd
 res://combat_level_1/fight.gd

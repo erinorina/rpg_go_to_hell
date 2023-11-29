@@ -29,22 +29,31 @@ func _process(delta):
 	
 	match travel_state:
 		TravelState.IDLE:
+#			singleton_monsters.monster_shader_fade_in_out = false
 			moved_full_distance = false
 
 		TravelState.ROLLING:
-			singleton_monsters.monster_instance.visible = false
+			singleton_monsters.monster_shader_fade_over = false
+			singleton_monsters.monster_shader_fade_in_out = true
+#			singleton_monsters.monster_shader_fade_in_out = true
+#			singleton_monsters.monster_instance.visible = false
 #			singleton.monster.hide()
 			travel()
 			travel_state = TravelState.ADVANCING
 
 		TravelState.ADVANCING:
+			singleton_monsters.monster_shader_fade_over = false
+			singleton_monsters.monster_shader_fade_in_out = true
+#			singleton_monsters.monster_shader_fade_in_out = true
 			move_ground_on_dice_roll(travel_distance, delta)
 			if moved_full_distance:
 				travel_state = TravelState.COMBAT
 
 		TravelState.COMBAT:
-			singleton_monsters.monster_textures(singleton_monsters.forest_0)
-			singleton_monsters.monster_instance.visible = true
+			singleton_monsters.monster_shader_fade_over = false
+			singleton_monsters.monster_shader_fade_in_out = false
+#			singleton_monsters.monster_textures(singleton_monsters.forest_0)
+#			singleton_monsters.monster_instance.visible = true
 #			singleton.monster.show()		
 			roll_events(delta)
 			travel_state = TravelState.IDLE
