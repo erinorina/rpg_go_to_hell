@@ -51,23 +51,6 @@ func show_menu_scene():
 		child.visible = true
 
 
-# QUICK COMBAT SCENE
-var quick_combat_scene_instance
-var quick_combat_scene = load("res://combat/quick_fight.tscn")
-func switch_to_quick_combat_scene():
-	add_quick_combat_scene()
-	show_quick_combat_scene()
-	
-func add_quick_combat_scene():
-	if quick_combat_scene_instance == null:
-		quick_combat_scene_instance = quick_combat_scene.instantiate()
-		get_tree().root.add_child(quick_combat_scene_instance)
-
-func show_quick_combat_scene():
-	quick_combat_scene_instance.visible = true
-	for child in quick_combat_scene_instance.get_children():
-		child.visible = true
-
 # COMBAT SCENE LEVEL 1
 var combat_level_1_scene_instance
 var combat_level_1_scene = load("res://combat_level_1/fight.tscn")
@@ -139,64 +122,44 @@ func show_exploration_plain_scene():
 	for child in exploration_plain_scene_instance.get_children():
 		child.visible = true
 
-'''
-# FOREST MONSTERS RANDOM PICK PNG IN FOLDER
-@onready var forest_monsters_0 = []
-@onready var forest_monsters_0_random:String
 
-@onready var forest_monsters_1 = []
-@onready var forest_monsters_1_random:String
-
-@onready var forest_monsters_2 = []
-@onready var forest_monsters_2_random:String
-# fuck ROOT BUG forest_monsters_2_random
-#ERROR: No loader found for resource: res://.
-#   at: _load (core/io/resource_loader.cpp:281)
-#monster path /root/Singleton/monster
-
-@onready var monster_glb = load("res://assets/monsters/monster.glb")
-@onready var monster = monster_glb.instantiate()
-
-func _ready():
-	monster.transform.origin.z = -3
-	add_child(monster)
-
-	append_directory_png_textures("res://assets/monsters/forest_monsters_0/",forest_monsters_0)
-	if forest_monsters_0.size() > 0:
-		forest_monsters_0_random = forest_monsters_0[randi() % forest_monsters_0.size()]
+# forest
+var forest_scene_instance
+var forest_scene = load("res://assets/exploration/forest/forest_test.glb")
+func switch_to_forest():
+	add_forest_scene()
+	show_forest_scene()
 	
-	append_directory_png_textures("res://assets/monsters/forest_monsters_1/",forest_monsters_1)
-	if forest_monsters_1.size() > 0:
-		forest_monsters_1_random = forest_monsters_1[randi() % forest_monsters_1.size()]
+func clear_forest():
+	if forest_scene_instance != null:
+		forest_scene_instance.queue_free()
 
-	append_directory_png_textures("res://assets/monsters/forest_monsters_2_diff/",forest_monsters_2)
-	if forest_monsters_2.size() > 0:
-		forest_monsters_2_random = forest_monsters_2[randi() % forest_monsters_2.size()]
-	
-func _process(_delta):
-	if forest_monsters_0.size() > 0:
-		# fuck root cause forest_monsters_0_random is null
-		forest_monsters_0_random = forest_monsters_0[randi() % forest_monsters_0.size()]
-	if forest_monsters_1.size() > 0:
-		forest_monsters_1_random = forest_monsters_1[randi() % forest_monsters_1.size()]
-	if forest_monsters_2.size() > 0:
-		forest_monsters_2_random = forest_monsters_2[randi() % forest_monsters_2.size()]
+func add_forest_scene():
+	if forest_scene_instance == null:
+		forest_scene_instance = forest_scene.instantiate()
+		get_tree().root.add_child(forest_scene_instance)
 
-func append_directory_png_textures(_directory_of_png:String, _array:Array):
-	var monster_path = _directory_of_png
-	var directory = DirAccess.open(monster_path)
-	if directory != null:
-		directory.list_dir_begin()
-		var file_name = directory.get_next()
-		while file_name != "":
-			if not directory.current_is_dir():
-				var file = FileAccess.open(monster_path + file_name, FileAccess.READ)
-				if file != null:
-					var extension = file_name.get_extension()
-					if extension == "png":
-						_array.append(monster_path + file_name)
-					file.close()
-			file_name = directory.get_next()
-		directory.list_dir_end()
+func show_forest_scene():
+	forest_scene_instance.visible = true
+	for child in forest_scene_instance.get_children():
+		child.visible = true
 
-'''
+
+
+# HELL
+var hell_scene_instance
+var hell_scene = load("res://assets/exploration/hell/hell_test.glb")
+func switch_to_hell():
+	add_hell_scene()
+	show_hell_scene()
+
+func add_hell_scene():
+	if hell_scene_instance == null:
+		hell_scene_instance = hell_scene.instantiate()
+		get_tree().root.add_child(hell_scene_instance)
+
+func show_hell_scene():
+	hell_scene_instance.visible = true
+	for child in hell_scene_instance.get_children():
+		child.visible = true
+

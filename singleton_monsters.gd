@@ -21,6 +21,17 @@ func _process(delta):
 		monster_shader_fade_to_opaque_and_stop(delta)
 
 
+func monster_show(_show:bool):
+	var show = _show
+	if show:
+		monster_shader_fade_over = false
+		monster_shader_fade_in_out = false
+	else:
+		monster_shader_fade_over = false
+		monster_shader_fade_in_out = true
+
+
+
 var monster_material:ShaderMaterial
 func monster_shader_fade():
 	monster_material = ShaderMaterial.new()
@@ -37,7 +48,7 @@ func monster_shader_fade():
 		vec4 fade_color = vec4(my_color.rgb, 0.0);
 		my_color = mix(my_color, fade_color, fade);
 		ALBEDO = my_color.rgb;
-		ALPHA = my_color.a;
+		ALPHA *= my_color.a * my_color.a;
 	}
 	"""
 
@@ -81,13 +92,13 @@ func monster_shader_fade_to_transparent_and_stop(_delta:float):
 	if monster_shader_fade_in_out==true and fade ==1.0:
 		fade=0.0
 	fade += fade_speed * _delta * fade_direction
-	print("to transparent, monster_shader_fade_in_out is: ", monster_shader_fade_in_out)
+#	print("to transparent, monster_shader_fade_in_out is: ", monster_shader_fade_in_out)	
 	if fade >= 1.0:
 		fade = 1.0
 		monster_shader_fade_in_out = false	
 		monster_shader_fade_over=true		
 	monster_material.set_shader_parameter("fade", fade)
-	
+
 		
 func monster_shader_fade_to_opaque_and_stop(_delta:float):
 	if monster_shader_fade_in_out==true:
@@ -95,7 +106,7 @@ func monster_shader_fade_to_opaque_and_stop(_delta:float):
 	if monster_shader_fade_in_out==false and fade ==0.0:
 		fade=1.0
 	fade -= fade_speed * _delta * fade_direction
-	print("to opaque, monster_shader_fade_in_out: ", monster_shader_fade_in_out)
+#	print("to opaque, monster_shader_fade_in_out: ", monster_shader_fade_in_out)
 	if fade <= 0.0:
 		fade = 0.0
 		monster_shader_fade_in_out = true
@@ -104,6 +115,12 @@ func monster_shader_fade_to_opaque_and_stop(_delta:float):
 
 
 @onready var forest_0 = ["res://assets/monsters/forest_monsters_0/0001.png", "res://assets/monsters/forest_monsters_0/0002.png", "res://assets/monsters/forest_monsters_0/0003.png", "res://assets/monsters/forest_monsters_0/0004.png", "res://assets/monsters/forest_monsters_0/0005.png", "res://assets/monsters/forest_monsters_0/0006.png", "res://assets/monsters/forest_monsters_0/0007.png", "res://assets/monsters/forest_monsters_0/0008.png", "res://assets/monsters/forest_monsters_0/0009.png", "res://assets/monsters/forest_monsters_0/0010.png", "res://assets/monsters/forest_monsters_0/0011.png", "res://assets/monsters/forest_monsters_0/0012.png", "res://assets/monsters/forest_monsters_0/0013.png", "res://assets/monsters/forest_monsters_0/0014.png", "res://assets/monsters/forest_monsters_0/0015.png", "res://assets/monsters/forest_monsters_0/0016.png", "res://assets/monsters/forest_monsters_0/0017.png", "res://assets/monsters/forest_monsters_0/0018.png", "res://assets/monsters/forest_monsters_0/0019.png", "res://assets/monsters/forest_monsters_0/0020.png", "res://assets/monsters/forest_monsters_0/0021.png", "res://assets/monsters/forest_monsters_0/0022.png", "res://assets/monsters/forest_monsters_0/0023.png", "res://assets/monsters/forest_monsters_0/0024.png", "res://assets/monsters/forest_monsters_0/0025.png"]
+@onready var forest_1 = ["res://assets/monsters/forest_monsters_1/0001.png", "res://assets/monsters/forest_monsters_1/0002.png", "res://assets/monsters/forest_monsters_1/0003.png", "res://assets/monsters/forest_monsters_1/0004.png", "res://assets/monsters/forest_monsters_1/0005.png", "res://assets/monsters/forest_monsters_1/0006.png", "res://assets/monsters/forest_monsters_1/0007.png", "res://assets/monsters/forest_monsters_1/0008.png", "res://assets/monsters/forest_monsters_1/0009.png", "res://assets/monsters/forest_monsters_1/0010.png", "res://assets/monsters/forest_monsters_1/0011.png", "res://assets/monsters/forest_monsters_1/0012.png", "res://assets/monsters/forest_monsters_1/0013.png", "res://assets/monsters/forest_monsters_1/0014.png", "res://assets/monsters/forest_monsters_1/0015.png", "res://assets/monsters/forest_monsters_1/0016.png", "res://assets/monsters/forest_monsters_1/0017.png", "res://assets/monsters/forest_monsters_1/0018.png", "res://assets/monsters/forest_monsters_1/0019.png", "res://assets/monsters/forest_monsters_1/0020.png", "res://assets/monsters/forest_monsters_1/0021.png", "res://assets/monsters/forest_monsters_1/0022.png", "res://assets/monsters/forest_monsters_1/0023.png", "res://assets/monsters/forest_monsters_1/0024.png", "res://assets/monsters/forest_monsters_1/0025.png"]
+@onready var forest_2 = ["res://assets/monsters/forest_monsters_2_diff/5d55c27d-92db-4606-84fd-942adacbf9c4.png", "res://assets/monsters/forest_monsters_2_diff/5e33b79d-0f6f-4c4a-a8f3-0403c55da074.png", "res://assets/monsters/forest_monsters_2_diff/6cc65be3-9573-47d7-8d80-4264b12594b5.png", "res://assets/monsters/forest_monsters_2_diff/8e1f9a03-cf7e-4e5c-a8a1-72349e8c185c.png", "res://assets/monsters/forest_monsters_2_diff/8ed1cd74-eb36-4eb4-b343-33a7824ef1eb.png", "res://assets/monsters/forest_monsters_2_diff/87e153ca-0e91-47ad-9c2f-6110a0d3e06f.png", "res://assets/monsters/forest_monsters_2_diff/ae99efed-fab9-4d49-903c-a60682702214.png", "res://assets/monsters/forest_monsters_2_diff/b37d52f4-72c7-4542-b04b-6226385858c7.png", "res://assets/monsters/forest_monsters_2_diff/c3d5305d-9d0e-4c78-a758-1cd1769a3fc7.png", "res://assets/monsters/forest_monsters_2_diff/ef1ace7f-51e5-40ae-985e-76fc6b24190c.png", "res://assets/monsters/forest_monsters_2_diff/f2a3e91b-e400-4272-a473-8cea340a9aa7.png", "res://assets/monsters/forest_monsters_2_diff/f5aadbed-a349-4651-afc8-1568fb108544.png"]
+
+
+
+
 '''
 var monster_material:ShaderMaterial
 func _ready():

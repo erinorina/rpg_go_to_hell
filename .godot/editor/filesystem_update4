@@ -1,7 +1,12 @@
-res://combat_level_1/fight.tscn
+res://assets/shaders/nearest_alpha_hash.tres
+res://assets/shaders/shader_test_nearest_alpha_hash.gd
 res://assets/exploration/forest/tree_frame.tres
-res://exploration/plain.tscn
-res://assets/exploration/forest/path.tscn
+res://assets/shaders/nearest_alpha_hash.gdshader
+res://assets/shaders/shader_test_nearest_alpha_hash.tscn
 res://singleton_monsters.gd
 res://exploration/plain.gd
-res://combat_level_1/fight.gd
+res://singleton.gd
+res://main/menu.tscn
+res://combat_level_1/fight.tscn
+res://combat/quick_fight.gd
+res://main/menu.gd
