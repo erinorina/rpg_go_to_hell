@@ -4,8 +4,10 @@ Godot Engine v4.1.3.stable
 
 To Do:
 
-    - [ ] Fisher-Yates shuffle algorithm for dice roll in exploration/plain [Wiki](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+    - [ ] Fisher-Yates shuffle algorithm for dice roll in exploration/plain 
 
+
+[Wiki](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 The Fisher-Yates shuffle algorithm is a common method for randomly shuffling or reordering a finite sequence, like rolling random dice. Here's a brief overview of how it works:
 
 Start by numbering the items in the sequence from 0 to n-1, where n is the total number of items. These will be the dice faces/values.
