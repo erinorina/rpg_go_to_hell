@@ -4,7 +4,7 @@ Godot Engine v4.1.3.stable
 
 To Do:
 
-    - Fisher-Yates shuffle algorithm for dice roll in exploration/plain
+    - [ ] Fisher-Yates shuffle algorithm for dice roll in exploration/plain [Wiki](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 
 The Fisher-Yates shuffle algorithm is a common method for randomly shuffling or reordering a finite sequence, like rolling random dice. Here's a brief overview of how it works:
 
@@ -17,13 +17,13 @@ Swap the items at indices i and the randomly generated number
 After the loop, the sequence will be randomly shuffled
 
 Pseudocode:
-'''
+```
 function shuffle(array)
 n = array.length
 for i from n−1 downto 0 do
 j = random integer such that 0 ≤ j ≤ i
 exchange array[i] and array[j]
-'''
+```
 So for a 6-sided die, you would:
 
 Number faces 1-6
