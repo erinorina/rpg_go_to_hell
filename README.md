@@ -4,7 +4,7 @@ Godot Engine v4.1.3.stable
 
 To Do:
 
-    - [ ] Fisher-Yates shuffle algorithm for dice roll in exploration/plain 
+- [ ] Fisher-Yates shuffle algorithm for dice roll in exploration/plain 
 
 
 [Wiki](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
