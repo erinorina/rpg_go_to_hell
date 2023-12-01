@@ -136,7 +136,7 @@ func roll_events(_delta):
 		
 	if travel_distance == 4:
 		print("- Sage in the woods offers advice. Pay to learn a spell or skill, or keep walking?")
-
+		singleton_monsters.monster_textures(singleton_monsters.experience)
 		singleton.switch_to_experience_scene()
 
 	if travel_distance == 5:

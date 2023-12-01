@@ -41,7 +41,13 @@ layout_mode = 2
 text = "Attack training"
 alignment = 0
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.02)
+
 [connection signal="pressed" from="VBoxContainer/return" to="." method="_on_return_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/reading" to="." method="_on_reading_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/reading" to="." method="_on_reading_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/health_potion" to="." method="_on_health_potion_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/health_potion" to="." method="_on_health_potion_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Attack_training" to="." method="_on_attack_training_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Attack_training" to="." method="_on_attack_training_pressed"]

@@ -1,7 +1,8 @@
-res://assets/exploration/forest/world.tscn
 res://main/menu.tscn
-res://singleton.gd
 res://assets/exploration/hell/world.tscn
 res://exploration/plain.tscn
-res://singleton_monsters.gd
+res://assets/exploration/forest/world.tscn
 res://exploration/plain.gd
+res://experience/gain.gd
+res://singleton_monsters.gd
+res://experience/gain.tscn

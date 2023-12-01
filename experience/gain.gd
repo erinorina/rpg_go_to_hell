@@ -1,19 +1,28 @@
 extends Node3D
-@onready var singleton=Singleton
-@onready var image =  $TextureRect
+@onready var singleton = Singleton
+@onready var singleton_monsters = SingletonMonsters
 
 func _ready():
 	singleton.switch_to_hud_scene()
+	singleton_monsters.monster_textures(singleton_monsters.experience)
+	singleton_monsters.monster_show(true)
 
 
+
+func _on_reading_mouse_entered():
+	singleton_monsters.monster_textures(experience_reading)
+	
 func _on_reading_pressed():
 	print("Reading a book")
-	var reading_texture = load("res://storyboard/reading.png")
-	image.texture = reading_texture
 	singleton.player_stats["xp"] = max(singleton.player_stats["xp"] + 1, 0)
 	print ("Book read, Exp +1")
 	singleton.switch_to_exploration_plain()
 	self.queue_free()
+
+
+
+func _on_health_potion_mouse_entered():
+	singleton_monsters.monster_textures(experience_health)
 
 func _on_health_potion_pressed():
 	singleton.player_stats["life"] = max(singleton.player_stats["life"] + 25, 0)
@@ -21,13 +30,24 @@ func _on_health_potion_pressed():
 	self.queue_free()
 
 
+
+func _on_attack_training_mouse_entered():
+	singleton_monsters.monster_textures(experience_attack)
+	
 func _on_attack_training_pressed():
 	singleton.player_stats["attack"] = max(singleton.player_stats["attack"] + 1, 0)
 	singleton.switch_to_exploration_plain()
 	self.queue_free()
 
 	
+	
 func _on_return_pressed():
 	print("experience gain return -> menu")
 	singleton.switch_to_menu_scene()
 	self.queue_free()
+
+
+
+@onready var experience_reading = ["res://assets/experience/reading/002.png"]
+@onready var experience_health = ["res://assets/experience/health/001.png"]
+@onready var experience_attack = ["res://assets/experience/attack/001.png"]
