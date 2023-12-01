@@ -18,3 +18,8 @@ Godot Engine v4.1.3.stable
 - [x] 4 Sage encounter experience gain
 - [ ] 5 find object, buy/sell object
 - [ ] 6 chose a path stay/change destination
+
+### CORE SCENES
+
+- [ ] Nomad Marchand Buy/sell, inventory
+- [ ] Change the travel destination, explore a new zone or stay in the level
