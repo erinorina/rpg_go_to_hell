@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" load_steps=4 format=3 uid="uid://egrdh20kx2v3"]
 
-[ext_resource type="Texture2D" uid="uid://dm6wdqdw24fna" path="res://assets/exploration/hell/frame_front.png" id="1_042co"]
+[ext_resource type="Texture2D" uid="uid://dm6wdqdw24fna" path="res://assets/exploration/hell/scrap/frame_front.png" id="1_042co"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng2dy"]
 transparency = 4
