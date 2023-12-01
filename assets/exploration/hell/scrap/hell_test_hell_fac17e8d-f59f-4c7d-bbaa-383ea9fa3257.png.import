@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cwkm6og8bisng"
+path.s3tc="res://.godot/imported/hell_test_hell_fac17e8d-f59f-4c7d-bbaa-383ea9fa3257.png-793ef2023f7251ecb00a2665e8cf089e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://assets/exploration/hell/scrap/hell_test_hell_fac17e8d-f59f-4c7d-bbaa-383ea9fa3257.png"
+dest_files=["res://.godot/imported/hell_test_hell_fac17e8d-f59f-4c7d-bbaa-383ea9fa3257.png-793ef2023f7251ecb00a2665e8cf089e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

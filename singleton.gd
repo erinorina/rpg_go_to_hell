@@ -125,7 +125,7 @@ func show_exploration_plain_scene():
 
 # forest
 var forest_scene_instance
-var forest_scene = load("res://assets/exploration/forest/forest_test.glb")
+var forest_scene = load("res://assets/exploration/forest/world.tscn")
 func switch_to_forest():
 	add_forest_scene()
 	show_forest_scene()
@@ -148,7 +148,7 @@ func show_forest_scene():
 
 # HELL
 var hell_scene_instance
-var hell_scene = load("res://assets/exploration/hell/hell_test.glb")
+var hell_scene = load("res://assets/exploration/hell/world.tscn")
 func switch_to_hell():
 	add_hell_scene()
 	show_hell_scene()

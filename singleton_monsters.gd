@@ -12,7 +12,7 @@ var monster_shader_fade_in_out = true
 func _ready():
 	monster_shader_fade()
 	monster_textures(forest_0)
-	monster_mesh(2.0)
+	monster_mesh(6.5)
 	
 	
 func _process(delta):
@@ -31,18 +31,14 @@ func monster_show(_show:bool):
 		monster_shader_fade_in_out = true
 
 
-
 var monster_material:ShaderMaterial
 func monster_shader_fade():
 	monster_material = ShaderMaterial.new()
 	var shader_code = """
 	shader_type spatial;
 	render_mode unshaded;
-	
 	uniform float fade;
-	
 	uniform sampler2D my_texture;
-
 	void fragment() {
 		vec4 my_color = texture(my_texture, UV);
 		vec4 fade_color = vec4(my_color.rgb, 0.0);
@@ -51,7 +47,6 @@ func monster_shader_fade():
 		ALPHA *= my_color.a * my_color.a;
 	}
 	"""
-
 	var shader = Shader.new()
 	shader.code = shader_code
 	monster_material.shader = shader
@@ -74,7 +69,7 @@ func monster_mesh(plane_size:float= 2.0):
 	mesh_instance.mesh = plane_mesh
 	# Transform the mesh_instance
 	mesh_instance.rotation.x = deg_to_rad(90)
-	mesh_instance.transform.origin = Vector3(0, plane_size/2, -3.0)
+	mesh_instance.transform.origin = Vector3(0, 0, -3.0) # do Y plane_size/2 for origin at bottom
 	# Assign the ShaderMaterial to the MeshInstance3D
 	mesh_instance.set_material_override(monster_material)
 	# Add the MeshInstance3D to the scene

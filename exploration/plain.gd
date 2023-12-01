@@ -84,7 +84,6 @@ var current_world:Node3D
 func move_world(_delta):
 	print("moving...")
 	var speed = 1.0
-	var end_position:Vector3
 	
 	if current_world:
 		end_position = start_position + Vector3(0, 0, travel_distance) * speed

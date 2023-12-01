@@ -1,11 +1,11 @@
+Node3D
+CSGBox3D
 Camera3D
 Label
-CSGBox3D
 SpotLight3D
 OmniLight3D
 VBoxContainer
 Control
 HBoxContainer
-Node3D
 TextureRect
 Button

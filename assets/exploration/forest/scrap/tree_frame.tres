@@ -1,0 +1,38 @@
+[gd_resource type="ArrayMesh" load_steps=4 format=3 uid="uid://egrdh20kx2v3"]
+
+[ext_resource type="Texture2D" uid="uid://dm6wdqdw24fna" path="res://assets/exploration/hell/frame_front.png" id="1_042co"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng2dy"]
+transparency = 4
+albedo_texture = ExtResource("1_042co")
+heightmap_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_046uc"]
+_surfaces = [{
+"aabb": AABB(-8, -8, -3.49691e-07, 16, 16, 1e-05),
+"format": 4097,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Material.001",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 193, 0, 0, 0, 193, 46, 189, 187, 180, 0, 0, 0, 65, 0, 0, 0, 193, 46, 189, 187, 180, 0, 0, 0, 193, 0, 0, 0, 65, 46, 189, 187, 52, 0, 0, 0, 65, 0, 0, 0, 65, 46, 189, 187, 52)
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "tree_frame_Plane"
+_surfaces = [{
+"aabb": AABB(-8, -8, -3.49691e-07, 16, 16, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_ng2dy"),
+"name": "Material.001",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 193, 0, 0, 0, 193, 46, 189, 187, 180, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 65, 0, 0, 0, 193, 46, 189, 187, 180, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 193, 0, 0, 0, 65, 46, 189, 187, 52, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 65, 0, 0, 0, 65, 46, 189, 187, 52, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_046uc")
