@@ -40,3 +40,21 @@ manages player stats, Loads different game scenes, Shows/hides scenes to switch 
 - [x] defines a player_stats dictionary to store player stats like level, XP, health, attack etc
 - [x] functions to reset player stats
 - [x] loads different scene files (HUD, Menu, Combat level 1 etc.) and instantiates them as scene instances
+
+## exploration/plain.gd
+Uses scenes for explorable worlds, State machine for traveling/combat phases, Rolls for random distance and events, Loads appropriate content per level
+
+- [x] fsm IDLE, ROLLING, ADVANCING, COMBAT
+- [x] Switches worlds when player levels up
+- [x] Advances travel on rolling
+- [x] Enters combat on reaching destination
+- [x] roll_events
+
+## combat_level_1/fight.gd
+Random monster generation, Attack dice rolling and outcome, Calculating and displaying stats, XP/leveling on victory, Scene transitions on win/loss
+
+- [x] Generates random monster based on level
+- [x] Compares and determines winner, Awards XP to player on win
+- [x] Calculate random attack values within min-max ranges, Scales ranges based on player level
+- [x] XP/leveling on victory
+- [x] Scene transitions on win/loss
