@@ -2,15 +2,15 @@
 
 Godot Engine v4.1.3.stable
 
-To Do:
+## To Do:
 
-- [x] #CORE DICE ROLL
+### CORE DICE ROLL
 - [ ] Fisher-Yates shuffle algorithm for dice roll in exploration/plain [Wiki](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 
-- [x] #CORE ROLL EVENTS
+### CORE ROLL EVENTS
 - [ ] 1 loose object/life... , trap
 - [ ] 2 loose/win gold, thiefs encounter
-- [x] 3 combats
-- [x] 4 experience gain
+- [x] 3 normal combats encounter
+- [x] 4 Sage encounter experience gain
 - [ ] 5 find object, buy/sell object
-- [ ] 6 ???
+- [ ] 6 chose a path stay/change destination
