@@ -18,7 +18,8 @@ var moved_full_distance = false
 
 func _ready():
 	singleton.switch_to_forest()
-
+#	dice_values = fisher_yates_shuffle(dice_values)
+	
 func _on_traveling_pressed():
 	if travel_state == TravelState.ADVANCING:
 		return
@@ -64,13 +65,26 @@ func _process(delta):
 
 
 
+# DICE LOGIC FOR TRAVELING , without repeats between rolls
 var travel_distance:int
+var dice_current_values = [1,2,3,4,5,6]
+var dice_next_values = [6,5,4,3,2,1]
+var dice_index:int=5
 func travel():
-	travel_distance = randi() % 6 + 1
-	player_dice.text = str("Travel Distance : ", travel_distance)
-
+	dice_index +=1
+	if dice_index >= dice_current_values.size():
+		dice_current_values.shuffle()
+		dice_next_values.shuffle()
+		while dice_current_values[5]==dice_next_values[0]:
+			dice_next_values.shuffle()
+		if dice_current_values[5]!=dice_next_values[0]:
+			dice_next_values=dice_current_values
+		dice_index = 0
+	travel_distance = dice_current_values[dice_index-1]
+	print("travel_distance ",travel_distance)
 	return travel_distance
-
+	
+	
 func move_ground_on_dice_roll(_player_roll,_delta):
 	print("advancing", _player_roll)
 	await get_tree().create_timer(2).timeout

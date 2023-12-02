@@ -1,2 +1,6 @@
+res://main/menu.tscn
+res://exploration/plain.gd
+res://assets/exploration/hell/world.tscn
+res://exploration/plain.tscn
+res://assets/exploration/forest/world.tscn
 res://experience/gain.tscn
-res://assets/exploration/forest/scrap/tree_frame.tres
