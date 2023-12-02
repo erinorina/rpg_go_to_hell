@@ -6,8 +6,8 @@ Godot Engine v4.1.3.stable
 
 
 ### CORE DICE ROLL
+- [x] exploration/plain.gd
 
-- [ ] Fisher-Yates shuffle algorithm for dice roll in exploration/plain [Wiki](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 
 
 ### CORE ROLL EVENTS
@@ -32,7 +32,6 @@ This allows dynamically spawning a monster plane prefab that fades in/out over t
 - [x] A shader that can fade textures
 - [x] Loading random textures
 - [x] Creating a 3D plane mesh
-- [x] Controlling fade animation each frame
 
 ## singleton.gd
 manages player stats, Loads different game scenes, Shows/hides scenes to switch between them
@@ -46,15 +45,14 @@ Uses scenes for explorable worlds, State machine for traveling/combat phases, Ro
 
 - [x] fsm IDLE, ROLLING, ADVANCING, COMBAT
 - [x] Switches worlds when player levels up
-- [x] Advances travel on rolling
-- [x] Enters combat on reaching destination
+- [x] CORE DICE LOGIC FOR TRAVELING , without repeats between rolls
+- [x] Advances travel on rolling, Enters combat on reaching destination
 - [x] roll_events
 
 ## combat_level_1/fight.gd
 Random monster generation, Attack dice rolling and outcome, Calculating and displaying stats, XP/leveling on victory, Scene transitions on win/loss
 
-- [x] Generates random monster based on level
+- [x] Generates random monster texture based on level
 - [x] Compares and determines winner, Awards XP to player on win
 - [x] Calculate random attack values within min-max ranges, Scales ranges based on player level
-- [x] XP/leveling on victory
 - [x] Scene transitions on win/loss
