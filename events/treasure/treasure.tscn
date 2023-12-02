@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://084f7d401dts"]
+
+[ext_resource type="Script" path="res://events/treasure/treasure.gd" id="1_v0tcg"]
+
+[node name="event_treasure" type="Node3D"]
+script = ExtResource("1_v0tcg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 256.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_right = 128.0
+offset_bottom = 131.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="treasure" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Treasure found"
+
+[node name="return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "return"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.02)

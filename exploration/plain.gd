@@ -136,26 +136,29 @@ func roll_events(_delta):
 	$VBoxContainer.hide()
 
 	if travel_distance == 1:
-		print("Trap loose one object, armor, shield, helmet")
-		singleton.switch_to_combat_level_1_scene()
+		print("find treasure")
+		singleton.switch_to_event_treasure_scene()
 
 		
 	if travel_distance == 2:
 		print("Ambush from thiefs if Combat lost , loose gold, if win , win golds")
-		singleton.switch_to_combat_level_1_scene()
+		singleton.switch_to_event_thief_scene()
 
 	if travel_distance == 3 :
 		print("Normal Combats Level 1, loose life if loss")
 		singleton.switch_to_combat_level_1_scene()
 		
 	if travel_distance == 4:
-		print("- Sage in the woods offers advice. Pay to learn a spell or skill, or keep walking?")
-		singleton_monsters.monster_textures(singleton_monsters.experience)
+		print("- experience stats, attack, health")
+#		singleton_monsters.monster_textures(singleton_monsters.experience)
 		singleton.switch_to_experience_scene()
 
 	if travel_distance == 5:
-		print("- Lucky find! Stumble upon a chest of buried treasure in the dirt.")
-		singleton.switch_to_combat_level_1_scene()
+		if singleton.player_stats["gold"] !=0:
+			singleton.switch_to_merchant_shop_scene()
+		else:
+			singleton.switch_to_combat_level_1_scene()
+
 
 	if travel_distance == 6:
 		print("- Moment of clarity! Study your skills to permanently increase one stat")

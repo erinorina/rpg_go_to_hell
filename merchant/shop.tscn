@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7tu1nmnymkvp"]
+
+[ext_resource type="Script" path="res://merchant/shop.gd" id="1_45frs"]
+
+[node name="merchant" type="Node3D"]
+script = ExtResource("1_45frs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 256.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 128.0
+offset_bottom = 131.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="shop" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Shop"
+
+[node name="return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "return"
+
+[node name="armor" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "3 Golds: Armor"
+alignment = 0
+
+[node name="sword" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "2 Golds: Sword"
+alignment = 0
+
+[node name="health_potion" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "1 Gold: Health potion"
+alignment = 0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.02)
+
+[connection signal="pressed" from="VBoxContainer/return" to="." method="_on_return_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/armor" to="." method="_on_armor_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/armor" to="." method="_on_armor_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/sword" to="." method="_on_sword_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/sword" to="." method="_on_sword_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/health_potion" to="." method="_on_health_potion_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/health_potion" to="." method="_on_health_potion_pressed"]

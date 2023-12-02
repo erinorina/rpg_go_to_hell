@@ -5,7 +5,8 @@ var player_stats = {
 	"level": 0,
 	"xp": 0,
 	"life": 100,
-	"attack":0
+	"attack":0,
+	"gold":0
 }
 
 # RESSET PLAYER STATS
@@ -104,6 +105,61 @@ func show_experience_scene():
 	for child in experience_scene_instance.get_children():
 		child.visible = true
 
+# merchant_shop SCENE
+var merchant_shop_scene_instance
+var merchant_shop_scene = load("res://merchant/shop.tscn")
+func switch_to_merchant_shop_scene():
+	add_merchant_shop_scene()
+	show_merchant_shop_scene()
+
+func add_merchant_shop_scene():
+	if merchant_shop_scene_instance == null:
+		merchant_shop_scene_instance = merchant_shop_scene.instantiate()
+		get_tree().root.add_child(merchant_shop_scene_instance)
+
+func show_merchant_shop_scene():
+	merchant_shop_scene_instance.visible = true
+	for child in merchant_shop_scene_instance.get_children():
+		child.visible = true
+
+################## EVENTS SCENES
+
+# event_treasure SCENE
+var event_treasure_scene_instance
+var event_treasure_scene = load("res://events/treasure/treasure.tscn")
+func switch_to_event_treasure_scene():
+	add_event_treasure_scene()
+	show_event_treasure_scene()
+
+func add_event_treasure_scene():
+	if event_treasure_scene_instance == null:
+		event_treasure_scene_instance = event_treasure_scene.instantiate()
+		get_tree().root.add_child(event_treasure_scene_instance)
+
+func show_event_treasure_scene():
+	event_treasure_scene_instance.visible = true
+	for child in event_treasure_scene_instance.get_children():
+		child.visible = true
+
+
+# event_thief SCENE
+var event_thief_scene_instance
+var event_thief_scene = load("res://events/thiefs/thiefs.tscn")
+func switch_to_event_thief_scene():
+	add_event_thief_scene()
+	show_event_thief_scene()
+
+func add_event_thief_scene():
+	if event_thief_scene_instance == null:
+		event_thief_scene_instance = event_thief_scene.instantiate()
+		get_tree().root.add_child(event_thief_scene_instance)
+
+func show_event_thief_scene():
+	event_thief_scene_instance.visible = true
+	for child in event_thief_scene_instance.get_children():
+		child.visible = true
+
+################### LEVELS
 
 # EXPLORATION PLAIN
 var exploration_plain_scene_instance

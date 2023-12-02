@@ -16,6 +16,8 @@ func _on_reading_pressed():
 	print("Reading a book")
 	singleton.player_stats["xp"] = max(singleton.player_stats["xp"] + 1, 0)
 	print ("Book read, Exp +1")
+	
+	singleton_monsters.monster_show(false)
 	singleton.switch_to_exploration_plain()
 	self.queue_free()
 
@@ -26,6 +28,8 @@ func _on_health_potion_mouse_entered():
 
 func _on_health_potion_pressed():
 	singleton.player_stats["life"] = max(singleton.player_stats["life"] + 25, 0)
+	
+	singleton_monsters.monster_show(false)
 	singleton.switch_to_exploration_plain()
 	self.queue_free()
 
@@ -36,6 +40,8 @@ func _on_attack_training_mouse_entered():
 	
 func _on_attack_training_pressed():
 	singleton.player_stats["attack"] = max(singleton.player_stats["attack"] + 1, 0)
+	
+	singleton_monsters.monster_show(false)
 	singleton.switch_to_exploration_plain()
 	self.queue_free()
 

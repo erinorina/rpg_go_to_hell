@@ -115,6 +115,8 @@ func monster_shader_fade_to_opaque_and_stop(_delta:float):
 
 @onready var experience = ["res://assets/characters/sage.png"]
 
+
+
 '''
 var monster_material:ShaderMaterial
 func _ready():
