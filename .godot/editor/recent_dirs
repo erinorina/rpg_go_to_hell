@@ -1,4 +1,5 @@
 /home/sd/Godot-4.1/Tests/rpg_github_releases/linux
+res://
 /home/sd/Godot-4.1/Tests/rpg_github_releases/html5
 /home/sd/Godot-4.1/Tests/rpg_github/gltf_to_blender
 res://assets/exploration/hell
@@ -7,7 +8,6 @@ res://assets/shaders/
 res://gltf_to_blender
 /home/sd/Godot-4.1/Tests/rpg_refactor/exports/html5
 /home/sd/Godot-4.1/Tests/rpg_refactor/exports/linux
-res://
 res://assets/exploration
 res://assets/exploration/forest
 res://storyboard

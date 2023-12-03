@@ -87,5 +87,7 @@ text = " "
 layout_mode = 2
 text = " "
 
+[node name="Camera3D" type="Camera3D" parent="."]
+
 [connection signal="pressed" from="combat/escape" to="." method="_on_escape_pressed"]
 [connection signal="pressed" from="combat/attack" to="." method="_on_attack_pressed"]

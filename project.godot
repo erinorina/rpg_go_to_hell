@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Singleton="*res://singleton.gd"
 SingletonMonsters="*res://singleton_monsters.gd"
+SingletonLevels="*res://singleton_levels.gd"
+SingletonDice="*res://singleton_dice.gd"
 
 [display]
 

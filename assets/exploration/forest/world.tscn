@@ -14,7 +14,7 @@ background_mode = 2
 sky = SubResource("Sky_wu2iv")
 tonemap_mode = 2
 
-[node name="level" type="Node3D"]
+[node name="forest" type="Node3D"]
 
 [node name="lights" type="Node3D" parent="."]
 

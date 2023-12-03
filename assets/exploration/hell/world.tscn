@@ -14,19 +14,12 @@ background_mode = 2
 sky = SubResource("Sky_wu2iv")
 tonemap_mode = 2
 
-[node name="level" type="Node3D"]
+[node name="hell" type="Node3D"]
 
-[node name="world" parent="." instance=ExtResource("1_o4omg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889244, 0.430377, 0.119)
+[node name="lights" type="Node3D" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lights"]
 environment = SubResource("Environment_5visy")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06565, 8.5513, -5.00369)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.91934, -7.12955, -5.00369)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.92774, 8.33606, -5.00369)
+[node name="level" parent="." instance=ExtResource("1_o4omg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889244, 0.430377, 0.119)

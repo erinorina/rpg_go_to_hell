@@ -2,11 +2,29 @@ extends Node3D
 
 @onready var singleton = Singleton
 @onready var singleton_monsters = SingletonMonsters
+@onready var singleton_level = SingletonLevels
+
 @onready var dice_result = $attack_result/dice_result
 @onready var monster_stats_damage = $stats_monster/damage
 
+
+# MONSTERS TEXTURES SWITCH
+func switch_monsters_textures():
+	if singleton.player_stats.level ==0:
+		print("switch_monsters_textures level 0")
+		singleton_monsters.monster_textures(singleton_monsters.forest_0)
+	if singleton.player_stats.level ==1:
+		print("switch_monsters_textures level 1")
+		singleton_monsters.monster_textures(singleton_monsters.forest_1)
+	if singleton.player_stats.level >=2:
+		print("switch_monsters_textures level 2")
+		singleton_monsters.monster_textures(singleton_monsters.forest_2)
+
+
 func _ready():
-	singleton.switch_to_hud_scene()
+	singleton.switch_to_scene("res://hud/hud.tscn")
+	switch_monsters_textures()
+	singleton_monsters.monster_show(true)
 
 func _process(_delta):
 	$stats_monster/hit_range.text = str("Hit Range ", monster_stats_attack())
@@ -30,7 +48,7 @@ func _process(_delta):
 
 func _on_escape_pressed():
 	print("fight escape -> menu")
-	singleton.switch_to_exploration_plain()
+	singleton_level.switch_to_scene("plain")
 	self.queue_free()	
 	
 func _on_attack_pressed():
@@ -85,11 +103,11 @@ func roll_dice_and_determine_winner(damage_caused_by_monster: int):
 	else:
 		dice_result.text = str("DRAW !")
 	
-#	singleton_monsters.monster_shader_fade_over = false
-#	singleton_monsters.monster_shader_fade_in_out = true
+
 	singleton_monsters.monster_show(false)
 	await get_tree().create_timer(2).timeout
-	singleton.switch_to_exploration_plain()
+
+	singleton_level.switch_to_scene("plain")
 	self.queue_free()
 	
 
