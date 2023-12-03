@@ -4,24 +4,19 @@ Godot Engine v4.1.3.stable
 
 ## To Do:
 
-
-### CORE DICE ROLL
-- [x] exploration/plain.gd
-
-
-
 ### CORE ROLL EVENTS
 
-- [ ] 1 loose object/life... , trap
-- [ ] 2 loose/win gold, thiefs encounter
+- [ ] 1 loose life... , trap
+- [x] 2 loose gold/life thiefs encounter
 - [x] 3 normal combats encounter
 - [x] 4 Sage encounter experience gain
-- [ ] 5 find object, buy/sell object
+- [ ] 5 find object
+- [x] 5 buy objects
 - [ ] 6 chose a path stay/change destination
 
 ### CORE SCENES
 
-- [ ] Nomad Marchand Buy/sell, inventory
+- [x] Nomad Marchand Buy
 - [ ] Change the travel destination, explore a new zone or stay in the level
 
 # Hight Level Code Overview
