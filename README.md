@@ -19,7 +19,7 @@ Godot Engine v4.1.3.stable
 - [x] Nomad Marchand Buy
 - [ ] Change the travel destination, explore a new zone or stay in the level
 
-# Hight Level Code Overview
+# Hight Level Code Overview (outdated)
 
 ## singleton_monsters.gd
 This allows dynamically spawning a monster plane prefab that fades in/out over time when shown/hidden through the monster_show function. The textures, meshes, materials etc are reused for different monsters.
