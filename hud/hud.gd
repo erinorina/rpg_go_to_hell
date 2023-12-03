@@ -11,3 +11,4 @@ func _process(_delta):
 	$HBoxContainer/level.text = "Level: " + str(round(singleton.player_stats["level"])) + " | "
 	$HBoxContainer/attack.text = "Attack: " + str(round(singleton.player_stats["attack"])) + " | "
 	$HBoxContainer/gold.text = "Gold: " + str(round(singleton.player_stats["gold"])) + " | "
+	$HBoxContainer/key.text = "Key to hell: " + str(singleton.player_stats["key"]) + " | "

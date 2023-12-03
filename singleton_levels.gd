@@ -19,10 +19,13 @@ func _process(_delta):
 	if singleton.player_stats["level"]==0:
 		switch_to_scene("forest")
 		
-	if singleton.player_stats["level"]==1:
+	if singleton.player_stats["level"]==1 and singleton.player_stats["key"]==true:
+		await get_tree().create_timer(2).timeout	
 		clear_scene("forest")
+
 		switch_to_scene("hell")
-		
+
+			
 	if singleton.player_stats["level"]==2:
 		clear_scene("hell")
 		# etc ...

@@ -33,6 +33,7 @@ func _process(delta):
 	var current_level = singleton.player_stats["level"]
 	if current_level != last_level:
 		last_level = current_level
+		singleton.player_stats["key"]=false
 #		init_world_from_player_level()
 #		switch_worlds()
 	
@@ -94,7 +95,8 @@ func roll_events(_delta):
 
 	if singleton_dice.travel_distance == 6:
 		print("Combat, to replace by direction choice")
-		singleton.switch_to_scene("res://combat_level_1/fight.tscn")
+#		singleton.switch_to_scene("res://combat_level_1/fight.tscn")
+		singleton.switch_to_scene("res://exploration/crypt/crypt.tscn")
 	
 	self.queue_free()
 #	

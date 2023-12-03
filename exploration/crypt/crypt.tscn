@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://dynynnphmsanv"]
+
+[ext_resource type="Script" path="res://exploration/crypt/crypt.gd" id="1_s6frx"]
+
+[node name="crypt" type="Node3D"]
+script = ExtResource("1_s6frx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 256.0
+offset_bottom = 256.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 128.0
+offset_bottom = 131.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="exploring_crypt" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exploring a crypt"
+
+[node name="return" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "return"
+
+[node name="reading" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Read a book"
+alignment = 0
+
+[node name="health_potion" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Health Potion"
+alignment = 0
+
+[node name="Attack_training" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Attack training"
+alignment = 0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.02)

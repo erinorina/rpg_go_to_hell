@@ -27,3 +27,6 @@ layout_mode = 2
 
 [node name="gold" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+
+[node name="key" type="Label" parent="HBoxContainer"]
+layout_mode = 2
