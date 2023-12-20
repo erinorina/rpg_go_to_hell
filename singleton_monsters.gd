@@ -69,7 +69,7 @@ func monster_mesh(plane_size:float= 2.0):
 	mesh_instance.mesh = plane_mesh
 	# Transform the mesh_instance
 	mesh_instance.rotation.x = deg_to_rad(90)
-	mesh_instance.transform.origin = Vector3(0, 0, -3.0) # do Y plane_size/2 for origin at bottom
+	mesh_instance.transform.origin = Vector3(0, 0, -4) # for Y do plane_size/2 for origin at bottom
 	# Assign the ShaderMaterial to the MeshInstance3D
 	mesh_instance.set_material_override(monster_material)
 	# Add the MeshInstance3D to the scene

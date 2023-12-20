@@ -36,6 +36,8 @@ func switch_to_scene(scene_name):
 	add_scene(scene_name)
 	show_scene(scene_name)
 
+	
+
 func clear_scene(scene_name):
 	if scene_instances[scene_name] != null:
 		scene_instances[scene_name].queue_free()
@@ -49,3 +51,5 @@ func show_scene(scene_name):
 	scene_instances[scene_name].visible = true
 	for child in scene_instances[scene_name].get_children():
 		child.visible = true
+
+

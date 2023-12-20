@@ -44,6 +44,3 @@ visible = false
 layout_mode = 2
 text = "Attack training"
 alignment = 0
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.02)

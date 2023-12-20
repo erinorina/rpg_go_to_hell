@@ -8,6 +8,11 @@ extends Node3D
 @onready var monster_stats_damage = $stats_monster/damage
 
 
+const MONSTER_HIT_FORCE_0 = 16 # 4
+const MONSTER_HIT_FORCE_1 = 36 # 9
+const MONSTER_HIT_FORCE_2 = 49 # 19
+
+
 # MONSTERS TEXTURES SWITCH
 func switch_monsters_textures():
 	if singleton.player_stats.level ==0:
@@ -66,12 +71,6 @@ func _on_attack_pressed():
 	if singleton.player_stats.level >= 2:
 		fight_monster("res://assets/monsters/forest_monsters_0/0003.png", MONSTER_HIT_FORCE_2, 3)
 
-
-		
-
-const MONSTER_HIT_FORCE_0 = 4
-const MONSTER_HIT_FORCE_1 = 9
-const MONSTER_HIT_FORCE_2 = 19
 
 func fight_monster(_texture_path: String, monster_hit_force: int, player_xp_gain: int):
 	roll_dice_and_determine_winner(monster_hit_force)

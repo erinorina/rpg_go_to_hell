@@ -27,8 +27,5 @@ text = "Travel"
 layout_mode = 2
 text = " "
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7)
-
 [connection signal="pressed" from="VBoxContainer/return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="VBoxContainer/traveling" to="." method="_on_traveling_pressed"]

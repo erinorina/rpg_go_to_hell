@@ -26,6 +26,3 @@ text = "Thiefs Attack"
 [node name="return" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "return"
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.02)
