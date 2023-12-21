@@ -1,9 +1,6 @@
 res://combat_level_1/fight.tscn
 res://exploration/plain.tscn
 res://assets/exploration/forest/world.tscn
-res://singleton_levels.gd
-res://singleton_camera.gd
-res://merchant/shop.tscn
 res://assets/exploration/hell/world.tscn
 res://combat/loss.tscn
 res://events/thiefs/thiefs.tscn
@@ -11,4 +8,5 @@ res://events/treasure/treasure.tscn
 res://experience/gain.tscn
 res://exploration/crypt/crypt.tscn
 res://hud/hud.tscn
-res://singleton_monsters.gd
+res://merchant/shop.tscn
+res://combat_level_1/fight.gd

@@ -128,7 +128,8 @@ func player_stats_attack():
 
 
 # MONSTER ATTACK RANGE
-@onready var monster_attack_max = 2 + singleton.player_stats["level"]
+# ps: searching a leveling balance for the enemy based on player stats ...
+@onready var monster_attack_max = 2 + singleton.player_stats["level"] + singleton.player_stats["attack"]/2
 @onready var monster_attack_min = 0 + singleton.player_stats["level"]
 
 func monster_attack_range():
